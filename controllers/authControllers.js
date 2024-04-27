@@ -57,7 +57,11 @@ export const userLogin = async (req, res) => {
     }
 
     const token = jwt.sign({ id: user._id }, "secretkey");
-    res.cookie("jwttoken", token, { httpOnly: false, path: "/" });
+    res.cookie("jwttoken", token, {
+      secure: true,
+      sameSite: "none",
+      maxAge: 30 * 24 * 60 * 60 * 1000,
+    });
 
     res.status(200).json({ success: "success", token: token });
 
