@@ -21,10 +21,10 @@ const mongoUri = process.env.MONGO_URI;
 
 const port = process.env.PORT;
 
-// app.get("/working", async (req, res) => {
-//   console.log("working");
-//   res.send("Backed code working properly");
-// });
+app.get("/working", async (req, res) => {
+  console.log("working");
+  res.send("Backed code working properly");
+});
 
 app.use("/auth", authRouter);
 app.use("/user", userRoutes);
