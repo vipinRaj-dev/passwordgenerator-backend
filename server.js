@@ -8,7 +8,15 @@ import userRoutes from "./Routes/userRoutes.js";
 
 const app = express();
 
-app.use(cors({ origin: "http://localhost:3000", credentials: true }));
+// app.use(cors({ origin: "http://localhost:3000", credentials: true }));
+
+app.use(
+  cors({
+    origin: ["http://54.160.159.152:3000", "http://localhost:3000"],
+    credentials: true,
+    allowedHeaders: ["Content-Type", "Authorization"],
+  })
+);
 
 app.use(express.json());
 dotenv.config();
