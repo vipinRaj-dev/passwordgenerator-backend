@@ -12,7 +12,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: ["http://54.160.159.152:3000", "http://localhost:3000"],
+    origin: ["http://54.160.159.152:3000", "http://localhost:3000" , "https://pg.vipinvj.xyz"],
     credentials: true,
     allowedHeaders: ["Content-Type", "Authorization"],
   })
